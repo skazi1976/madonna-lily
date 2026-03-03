@@ -19,6 +19,7 @@
             color: white; text-align: center; padding: 15px 20px;
         }
         .header h1 { font-size: 20px; font-weight: 700; letter-spacing: 2px; }
+        .header-sub { font-size: 12px; opacity: 0.85; margin-top: 4px; }
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         .product-card {
             background: white; border-radius: 16px; overflow: hidden;
@@ -45,16 +46,15 @@
         }
         .price-section {
             display: flex; align-items: center; gap: 16px;
-            margin-bottom: 20px; flex-wrap: wrap;
+            margin-bottom: 8px; flex-wrap: wrap;
         }
         .current-price { font-size: 36px; font-weight: 700; color: #e60023; }
-        .original-price {
-            font-size: 20px; color: #999; text-decoration: line-through;
-        }
+        .original-price { font-size: 20px; color: #999; text-decoration: line-through; }
         .discount-badge {
             background: #e60023; color: white; padding: 6px 14px;
             border-radius: 20px; font-size: 16px; font-weight: 700;
         }
+        .savings-text { font-size: 14px; color: #28a745; font-weight: 600; margin-bottom: 20px; }
         .cta-button {
             display: block; width: 100%; padding: 18px;
             background: linear-gradient(135deg, #e60023, #bd001a);
@@ -67,15 +67,94 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(230,0,35,0.4);
         }
+        .cta-sub { text-align: center; font-size: 13px; color: #888; margin-top: 8px; }
         .features {
             display: grid; grid-template-columns: repeat(3, 1fr);
             gap: 12px; margin-top: 20px; text-align: center;
         }
-        .feature {
-            padding: 16px 8px; background: #f9f9f9; border-radius: 10px;
-        }
+        .feature { padding: 16px 8px; background: #f9f9f9; border-radius: 10px; }
         .feature-icon { font-size: 24px; margin-bottom: 6px; }
         .feature-text { font-size: 13px; color: #666; }
+        .feature-detail { font-size: 11px; color: #999; margin-top: 4px; }
+        .info-section {
+            margin-top: 24px; padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .info-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: #1a1a1a; }
+        .info-grid {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .info-item {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 14px; color: #555; padding: 8px 0;
+        }
+        .info-icon { font-size: 16px; min-width: 20px; text-align: center; }
+        .trust-section {
+            margin-top: 24px; padding: 20px;
+            background: #f0faf0; border-radius: 12px;
+            border: 1px solid #d4edda;
+        }
+        .trust-title {
+            font-size: 15px; font-weight: 700; color: #28a745;
+            margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+        }
+        .trust-items { list-style: none; }
+        .trust-items li {
+            font-size: 13px; color: #555; padding: 6px 0;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .trust-items li::before { content: "\2713"; color: #28a745; font-weight: 700; }
+        .urgency-bar {
+            margin-top: 20px; padding: 12px 20px;
+            background: #fff3cd; border-radius: 10px;
+            border: 1px solid #ffc107;
+            display: flex; align-items: center; gap: 10px;
+            font-size: 14px; color: #856404;
+        }
+        .urgency-icon { font-size: 20px; }
+        .how-to-section { margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee; }
+        .steps {
+            display: flex; gap: 16px; margin-top: 12px;
+        }
+        .step {
+            flex: 1; text-align: center; padding: 16px 12px;
+            background: #f9f9f9; border-radius: 12px;
+        }
+        .step-number {
+            width: 32px; height: 32px; background: #e60023; color: white;
+            border-radius: 50%; display: inline-flex; align-items: center;
+            justify-content: center; font-weight: 700; font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .step-text { font-size: 13px; color: #555; }
+        .faq-section { margin-top: 24px; padding-top: 20px; border-top: 1px solid #eee; }
+        .faq-item { margin-bottom: 12px; }
+        .faq-q {
+            font-size: 14px; font-weight: 600; color: #1a1a1a;
+            cursor: pointer; padding: 10px 0;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-a { font-size: 13px; color: #666; line-height: 1.6; padding: 0 0 10px 0; display: none; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-arrow { transform: rotate(180deg); }
+        .faq-arrow { transition: transform 0.2s; font-size: 12px; }
+        .cta-button-bottom {
+            display: block; width: 100%; padding: 20px;
+            background: linear-gradient(135deg, #ff6b35, #e60023);
+            color: white; text-align: center; text-decoration: none;
+            border-radius: 12px; font-size: 22px; font-weight: 700;
+            margin-top: 30px; transition: transform 0.2s, box-shadow 0.2s;
+            letter-spacing: 1px; animation: pulse 2s infinite;
+        }
+        .cta-button-bottom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230,0,35,0.5);
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(230,0,35,0.3); }
+            50% { box-shadow: 0 4px 25px rgba(230,0,35,0.6); }
+        }
         .footer {
             text-align: center; padding: 30px 20px; color: #999; font-size: 13px;
         }
@@ -83,12 +162,15 @@
             .product-title { font-size: 18px; }
             .current-price { font-size: 28px; }
             .features { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+            .steps { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>ZARA VS ALIEXPRESS</h1>
+        <div class="header-sub">Find the best deals - Save up to 90% on fashion &amp; lifestyle</div>
     </div>
     <div class="container">
         <div class="product-card">
@@ -107,28 +189,130 @@
                     <span class="original-price">$164.88</span>
                     <span class="discount-badge">-46%</span>
                 </div>
+                <div class="savings-text">&#10003; You save $75.84 on this item!</div>
+
+                <div class="urgency-bar">
+                    <span class="urgency-icon">&#9200;</span>
+                    <span><strong>Limited Time Deal</strong> - This price may change at any time</span>
+                </div>
+
                 <div class="features">
                     <div class="feature">
                         <div class="feature-icon">&#128666;</div>
                         <div class="feature-text">Free Shipping</div>
+                        <div class="feature-detail">Worldwide delivery</div>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">&#128274;</div>
                         <div class="feature-text">Buyer Protection</div>
+                        <div class="feature-detail">Full refund if not received</div>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">&#11088;</div>
-                        <div class="feature-text">Top Rated</div>
+                        <div class="feature-text">Top Rated Seller</div>
+                        <div class="feature-detail">Trusted by thousands</div>
                     </div>
                 </div>
-                <a href="https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZboFJghOP4PlVKtyYBxPliSRjEXVZz55pKK9Nl9Rdc1XO25L2DAQOSH3Y53ryrevuBqmH8QkZv02mSv9hgS03ombd2eiz0d7OYE7Yw71JFEF7gI22dfr2gSisaHWy5JPMajj4MsWNQQpGFV07NZ95rpIhkmdQT1l4kCGDKB4Nsb4dFIB8TeFqPcR1WRIq2cqap9VxKxmwX9Ppo8hy4w0RzThilJCoBTj9ZNqQHL3zFM73IUM7JES52k208CPbt6iiF4iWSjqwt2tk02uvqPqvYINjPpxgOvnRfGd7UkdX01hnQqsLy8JzJK68xNklWyHyJF0gbIAgO0PUiC7k7BW2LNydmzzMwZ0vaqkAicUuZPJPFuwdgDi927t8saNG1uNgs08vTxEkDcdxyd2fFgpT57pvcqUC8h0BojB0KRczuDH5AxouM3V6XT4itGlVjBa0555VrIBYBNyBF4EebIoXSGYNNzyfcoOeZY2V2jnq2X5EioaQlwvMQDaCAbV2MPHFdiAH5MaAUzvEjaEnECPzwfzqJuMvTDLtR1pyiOWcaPX06e8FZHUrECBNXxH7cFxjIu853WN8owCtVBvDI2i0PfBHum2iUd6AwlugK26IQh75CcvbuAcKmuVpisRAYMjxpw5GnnZJoum96ufcaASBwO73Qy6nGNk04oCoGBP4nR6Pzv0NzZ" class="cta-button" target="_blank" rel="nofollow">
+
+                <a href="https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZboFJghOP4PlVKtyYBxPliSRjEXVZz55pKK9Nl9Rdc1XO25L2DAQOSH3Y53ryrevuBqmH8QkZv02mSv9hgS03ombd2eiz0d7OYE7Yw71JFEF7gI22dfr2gSisaHWy5JPMajj4MsWNQQpGFV07NZ95rpIhkmdQT1l4kCGDKB4Nsb4dFIB8TeFqPcR1WRIq2cqap9VxKxmwX9Ppo8hy4w0RzThilJCoBTj9ZNqQHsGyeZpf2hNPpRJpO24rwI4Y7pVEqfjH7V5NbT1YynGXTlxokdRoZhj3pKA9VF87PyoM7fKYnfcMqF8Cv6vkmyYqCCO1lvkggqLY3CSKmsurQfYB782IoYyiBWC302dgMZ0ZE1SdEDMfedxlARg7J2DDpLjdWdnb5TooQOrcOtYoRCiJfmLg1ugmP8cDF3H9vGUen0HK58cysacLgJ9iOAibBD9aInexKpHGaZSw6NZCELYA47B9rWhBQu1KeA1DHpzDGPTmX3tgwCp2uedRNmHtZlf9yxzcb26ReyY94qdecv2dkCGeaebrj5dNqJ6CyH0cAXGZva3YQO6FuSMsoaMrjY8qaHkoX6LmZEXJQxpkTOVsVAmL7ehp45hJLqkyuDN0vcsEZm7zZAMwhYV0ejg3QzSTGgpdALxIP4Ofvla4rz3fK6wYYsFZkA2rIHisLDrbovQ61YLoYL" class="cta-button" target="_blank" rel="nofollow">
                     BUY NOW - $89.04
                 </a>
+                <div class="cta-sub">&#128274; Secure checkout via AliExpress</div>
+
+                <!-- Product Details -->
+                <div class="info-section">
+                    <div class="info-title">Product Details</div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-icon">&#128176;</span>
+                            <span>Sale Price: <strong>$89.04</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">&#128184;</span>
+                            <span>Retail Price: <strong>$164.88</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">&#127757;</span>
+                            <span>Ships from: <strong>International</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">&#128230;</span>
+                            <span>Delivery: <strong>15-30 business days</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">&#128257;</span>
+                            <span>Returns: <strong>15-day free return</strong></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">&#128179;</span>
+                            <span>Payment: <strong>All major cards accepted</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Signals -->
+                <div class="trust-section">
+                    <div class="trust-title">&#128737; Why buy through us?</div>
+                    <ul class="trust-items">
+                        <li>We compare prices between brands like Zara and AliExpress to find you the best deals</li>
+                        <li>Same or similar quality products at a fraction of the price</li>
+                        <li>All purchases are protected by AliExpress Buyer Protection</li>
+                        <li>Free returns within 15 days if you're not satisfied</li>
+                        <li>Secure payment - your financial data is always protected</li>
+                    </ul>
+                </div>
+
+                <!-- How to Order -->
+                <div class="how-to-section">
+                    <div class="info-title">How to Order</div>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-text">Click <strong>"Buy Now"</strong></div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-text">Choose size &amp; color on AliExpress</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-text">Complete checkout securely</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="faq-section">
+                    <div class="info-title">Frequently Asked Questions</div>
+                    <div class="faq-item">
+                        <div class="faq-q">Is this product authentic? <span class="faq-arrow">&#9660;</span></div>
+                        <div class="faq-a">This product is sold directly by verified AliExpress sellers. While it may not be a branded item, it offers similar style and quality at a much lower price point.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">How long does shipping take? <span class="faq-arrow">&#9660;</span></div>
+                        <div class="faq-a">Standard shipping typically takes 15-30 business days depending on your location. Some sellers offer faster shipping options at checkout for an additional fee.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Can I return this item? <span class="faq-arrow">&#9660;</span></div>
+                        <div class="faq-a">Yes! AliExpress offers a 15-day free return policy. If the item doesn't match the description or arrives damaged, you can request a full refund.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Is my payment secure? <span class="faq-arrow">&#9660;</span></div>
+                        <div class="faq-a">Absolutely. AliExpress uses secure payment processing and your payment is held in escrow until you confirm receipt of your order.</div>
+                    </div>
+                </div>
+
+                <!-- Bottom CTA -->
+                <a href="https://s.click.aliexpress.com/s/NdpwztbAIgDMmxGbP8fFks7yUFfsHjzlImSYmA68h7xlMRgzueFsRgokQ9f9hcpVKttxtQE2VzIoqkXJXrpOr6uR3zv7mP4CDO9CddoFf4t0QE5DXPy8Pgjhz4irfQSEjEGUmy5yF3A5gJ9h3NYjLMgqIMqa3zcpq5E2BC3W5EbV40Dm9buQxWpZzw1lbX8Zm2kZtNIa4KyDieNjsH7IU6Yv8StELKVvT9r4eFAaXPGhwHsgaDqdNcmY116r3GC2YvsOopeiiZPhJrV0cwgOQDSkW93v7gVKDqPkXyZF1oSWa6wSAOeznMFVlVZboFJghOP4PlVKtyYBxPliSRjEXVZz55pKK9Nl9Rdc1XO25L2DAQOSH3Y53ryrevuBqmH8QkZv02mSv9hgS03ombd2eiz0d7OYE7Yw71JFEF7gI22dfr2gSisaHWy5JPMajj4MsWNQQpGFV07NZ95rpIhkmdQT1l4kCGDKB4Nsb4dFIB8TeFqPcR1WRIq2cqap9VxKxmwX9Ppo8hy4w0RzThilJCoBTj9ZNqQHsGyeZpf2hNPpRJpO24rwI4Y7pVEqfjH7V5NbT1YynGXTlxokdRoZhj3pKA9VF87PyoM7fKYnfcMqF8Cv6vkmyYqCCO1lvkggqLY3CSKmsurQfYB782IoYyiBWC302dgMZ0ZE1SdEDMfedxlARg7J2DDpLjdWdnb5TooQOrcOtYoRCiJfmLg1ugmP8cDF3H9vGUen0HK58cysacLgJ9iOAibBD9aInexKpHGaZSw6NZCELYA47B9rWhBQu1KeA1DHpzDGPTmX3tgwCp2uedRNmHtZlf9yxzcb26ReyY94qdecv2dkCGeaebrj5dNqJ6CyH0cAXGZva3YQO6FuSMsoaMrjY8qaHkoX6LmZEXJQxpkTOVsVAmL7ehp45hJLqkyuDN0vcsEZm7zZAMwhYV0ejg3QzSTGgpdALxIP4Ofvla4rz3fK6wYYsFZkA2rIHisLDrbovQ61YLoYL" class="cta-button-bottom" target="_blank" rel="nofollow">
+                    &#128293; GRAB THIS DEAL - $89.04 &#128293;
+                </a>
+                <div class="cta-sub">&#9200; Price not guaranteed - Buy now before it changes</div>
             </div>
         </div>
     </div>
     <div class="footer">
-        &copy; 2026 Zara Vs Aliexpress | Affiliate Disclosure: We earn a commission on purchases made through our links.
+        &copy; 2026 Zara Vs Aliexpress | Affiliate Disclosure: We earn a commission on purchases made through our links.<br>
+        Prices and availability are subject to change. Always verify the final price on AliExpress before purchasing.
     </div>
     <script>
         document.querySelectorAll('.gallery img').forEach(function(img) {
@@ -136,6 +320,11 @@
                 document.getElementById('mainImg').src = this.dataset.full || this.src;
                 document.querySelectorAll('.gallery img').forEach(function(i) { i.classList.remove('active'); });
                 this.classList.add('active');
+            });
+        });
+        document.querySelectorAll('.faq-item').forEach(function(item) {
+            item.querySelector('.faq-q').addEventListener('click', function() {
+                item.classList.toggle('open');
             });
         });
     </script>
